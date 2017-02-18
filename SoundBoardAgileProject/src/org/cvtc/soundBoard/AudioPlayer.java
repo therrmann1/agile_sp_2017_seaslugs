@@ -31,7 +31,6 @@ public class AudioPlayer extends JFrame {
         clip.start();
         
         
-        
 		 } catch (UnsupportedAudioFileException e) {
 				
 	         e.printStackTrace();
@@ -45,6 +44,7 @@ public class AudioPlayer extends JFrame {
 	         e.printStackTrace();
 	
 	      }
+		
 	}
 	
 }
