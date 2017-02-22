@@ -7,6 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.util.Random;
+
 import org.cvtc.soundBoard.SoundTest;
 
 public class GUI extends Application {
@@ -73,10 +75,10 @@ public class GUI extends Application {
 		randomSoundButton = new Button();
 		randomSoundButton.setText("Random Sound");
 		
-		int random = (int)(Math.random()*100);
+		Random randomSound = new Random();
 		
 		closeButton.setOnAction(e -> closeProgram());
-		randomSoundButton.setOnAction(e -> SoundTest.randomSound(random));
+		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(20)));
 		
 		// Add Elements to Main Scene
 		layoutMain.getChildren().addAll(closeButton, randomSoundButton, mainSplashLabel, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
