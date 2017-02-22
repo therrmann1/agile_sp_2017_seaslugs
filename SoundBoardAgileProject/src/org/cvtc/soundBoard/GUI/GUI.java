@@ -73,8 +73,10 @@ public class GUI extends Application {
 		randomSoundButton = new Button();
 		randomSoundButton.setText("Random Sound");
 		
+		int random = (int)(Math.random()*100);
+		
 		closeButton.setOnAction(e -> closeProgram());
-		randomSoundButton.setOnAction(e -> SoundTest.randomSound());
+		randomSoundButton.setOnAction(e -> SoundTest.randomSound(random));
 		
 		// Add Elements to Main Scene
 		layoutMain.getChildren().addAll(closeButton, randomSoundButton, mainSplashLabel, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
@@ -118,6 +120,11 @@ public class GUI extends Application {
 	
 		soundBoard1Stage.setScene(soundBoard1Scene);
 		soundBoard1Stage.show();
+		
+		Button sound1 = new Button();
+		sound1.setText("Hi 1");
+		sound1.setOnAction(e -> SoundTest.randomSound(0));
+		soundBoard1Layout.getChildren().addAll(sound1);
 	}
 	
 	private void startSoundBoard2(Stage soundBoard2Stage) {
