@@ -1,0 +1,6 @@
+.SoundBoardButtons{
+	-fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow( one-pass-box , black , 8 , 0.0 , 2 , 0 );
+    -fx-background-color: rgb(66, 184, 221);
+}
