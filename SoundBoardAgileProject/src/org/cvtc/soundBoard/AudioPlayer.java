@@ -28,7 +28,12 @@ public class AudioPlayer extends JFrame {
 
         clip.open(audioInputStream);
 
-        clip.start();
+        if(clip.isRunning()){
+        	// does nothing already playing
+        }else{
+        	clip.start();
+        }
+        
         
         
 		 } catch (UnsupportedAudioFileException e) {
@@ -45,6 +50,28 @@ public class AudioPlayer extends JFrame {
 	
 	      }
 		
+	}
+	public void stopSound(String soundFilePath){
+		try{
+			URL url = this.getClass().getClassLoader().getResource(soundFilePath);
+			 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
+				
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.stop();
+		} catch (UnsupportedAudioFileException e) {
+			
+	         e.printStackTrace();
+	
+	      } catch (IOException e) {
+	
+	         e.printStackTrace();
+	
+	      } catch (LineUnavailableException e) {
+	
+	         e.printStackTrace();
+	
+	      }
 	}
 	
 }
