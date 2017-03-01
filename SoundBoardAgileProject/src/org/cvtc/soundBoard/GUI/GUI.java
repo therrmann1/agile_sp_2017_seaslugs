@@ -120,7 +120,7 @@ public class GUI extends Application {
 		Random randomSound = new Random();
 		
 		closeButton.setOnAction(e -> closeProgram());
-		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(25)));
+		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(31)));
 		
 		// Position elements in the scene and add them to the scene.
 		layoutMain.getChildren().addAll(mainSplashBackground, logoView, stopButton ,closeButton, randomSoundButton, mainSplash, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
