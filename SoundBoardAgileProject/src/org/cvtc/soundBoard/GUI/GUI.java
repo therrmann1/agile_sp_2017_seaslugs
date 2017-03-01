@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.effect.Reflection;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -58,6 +59,10 @@ public class GUI extends Application {
 		closeButton.setText("X");
 		closeButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		
 		Button SoundBoard1Button = new Button("Greetings");
 		SoundBoard1Button.setOnAction(e -> startSoundBoard1(window));
 		SoundBoard1Button.getStyleClass().add("SoundBoardButtons");
@@ -105,6 +110,8 @@ public class GUI extends Application {
 		 
 		mainSplash.setTranslateY(400);
 		
+		logoView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> SoundTest.randomSound(25));
+		
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
@@ -116,8 +123,9 @@ public class GUI extends Application {
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(25)));
 		
 		// Position elements in the scene and add them to the scene.
-		layoutMain.getChildren().addAll(mainSplashBackground, logoView, closeButton, randomSoundButton, mainSplash, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
+		layoutMain.getChildren().addAll(mainSplashBackground, logoView, stopButton ,closeButton, randomSoundButton, mainSplash, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
 		closeButton.relocate(640, 350);
+		stopButton.relocate(320, 350);
 		randomSoundButton.relocate(10, 350);
 		mainSplash.relocate(200, -410);
 		mainSplashBackground.relocate(0, 0);

@@ -9,7 +9,7 @@ public class SoundTest {
 							   "werewolf.wav", "zombies.wav", "Shock.wav", "laugh.wav", 
 							   "Alpaca_Mating_Call.wav", "Cat_Meowing.wav", "rooster.wav", "hawk_screeching.wav", "duck.wav",
 							   "Fart1.wav", "Fart2.wav", "Fart3.wav", "Fart4.wav", "Fart5.wav",
-							   "Blastwave_1.wav", "Blastwave_2.wav", "Blastwave_3.wav", "Blastwave_4.wav", "Blastwave_5.wav"};
+							   "Blastwave_1.wav", "Blastwave_2.wav", "Blastwave_3.wav", "Blastwave_4.wav", "Blastwave_5.wav", "Rick_Roll.wav"};
 		
 		AudioPlayer audioPlayer = new AudioPlayer();
 		
