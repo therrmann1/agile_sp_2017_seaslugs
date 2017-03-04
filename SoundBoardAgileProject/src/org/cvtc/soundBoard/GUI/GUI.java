@@ -62,6 +62,8 @@ public class GUI extends Application {
 		Button stopButton = new Button();
 		stopButton.setText("STOP");
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
 		
 		Button SoundBoard1Button = new Button("Greetings");
 		SoundBoard1Button.setOnAction(e -> startSoundBoard1(window));
