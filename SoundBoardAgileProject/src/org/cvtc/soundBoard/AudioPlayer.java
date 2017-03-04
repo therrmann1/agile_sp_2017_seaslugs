@@ -14,25 +14,27 @@ public class AudioPlayer extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 
+	private Clip clip;
+	
 	public void playSound(String soundFilePath) {
         
 		try {
 			
-		URL url = this.getClass().getClassLoader().getResource(soundFilePath);
-    	
-        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
-		
-		Clip clip = AudioSystem.getClip();
-		
-        // Open audio clip and load samples from the audio input stream.
-
-        clip.open(audioInputStream);
-
-        if(clip.isRunning()){
-        	// does nothing already playing
-        }else{
-        	clip.start();
-        }
+			URL url = this.getClass().getClassLoader().getResource(soundFilePath);
+	    	
+	        AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
+			
+			clip = AudioSystem.getClip();
+			
+	        // Open audio clip and load samples from the audio input stream.
+	
+	        clip.open(audioInputStream);
+	
+	        if(clip.isRunning()){
+	        	// does nothing already playing
+	        }else{
+	        	clip.start();
+	        }
         
         
         
@@ -51,27 +53,10 @@ public class AudioPlayer extends JFrame {
 	      }
 		
 	}
-	public void stopSound(String soundFilePath){
-		try{
-			URL url = this.getClass().getClassLoader().getResource(soundFilePath);
-			 AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
-				
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-			clip.stop();
-		} catch (UnsupportedAudioFileException e) {
-			
-	         e.printStackTrace();
 	
-	      } catch (IOException e) {
-	
-	         e.printStackTrace();
-	
-	      } catch (LineUnavailableException e) {
-	
-	         e.printStackTrace();
-	
-	      }
+	public void stopSound(){
+
+	      clip.stop();
 	}
 	
 }
