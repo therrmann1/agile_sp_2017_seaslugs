@@ -92,7 +92,7 @@ public class GUI extends Application {
 		SoundBoard7Button.getStyleClass().add("SoundBoardButtons");
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -100,7 +100,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -115,7 +115,7 @@ public class GUI extends Application {
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -178,7 +178,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -186,7 +186,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -199,7 +199,7 @@ public class GUI extends Application {
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -279,7 +279,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -287,7 +287,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -301,7 +301,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -383,7 +383,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -391,7 +391,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -405,7 +405,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -485,7 +485,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -493,7 +493,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -507,7 +507,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -588,7 +588,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -596,7 +596,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -610,7 +610,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
