@@ -216,22 +216,22 @@ public class GUI extends Application {
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(4)));
 		
 		Button sound1 = new Button();
-		sound1.setText("Hi 1");
+		sound1.setText("Hi (Female)");
 		sound1.setOnAction(e -> SoundTest.randomSound(0));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Hi 2");
+		sound2.setText("Hey Sweetness");
 		sound2.setOnAction(e -> SoundTest.randomSound(1));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Hi 3");
+		sound3.setText("Hello (Male)");
 		sound3.setOnAction(e -> SoundTest.randomSound(2));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Hi 4");
+		sound4.setText("Hi Cutiepie");
 		sound4.setOnAction(e -> SoundTest.randomSound(3));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
