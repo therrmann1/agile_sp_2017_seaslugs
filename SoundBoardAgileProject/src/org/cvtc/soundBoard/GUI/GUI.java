@@ -236,7 +236,7 @@ public class GUI extends Application {
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Hi 5");
+		sound5.setText("Hello Echo");
 		sound5.setOnAction(e -> SoundTest.randomSound(4));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
