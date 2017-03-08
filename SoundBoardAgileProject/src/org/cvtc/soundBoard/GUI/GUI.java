@@ -62,6 +62,8 @@ public class GUI extends Application {
 		Button stopButton = new Button();
 		stopButton.setText("STOP");
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
 		
 		Button SoundBoard1Button = new Button("Greetings");
 		SoundBoard1Button.setOnAction(e -> startSoundBoard1(window));
@@ -83,16 +85,16 @@ public class GUI extends Application {
 		SoundBoard5Button.setOnAction(e -> startSoundBoard5(window));
 		SoundBoard5Button.getStyleClass().add("SoundBoardButtons");
 		
-		Button SoundBoard6Button = new Button("Go to Sound Board 6");
-		SoundBoard6Button.setOnAction(e -> startSoundBoard1(window));
+		Button SoundBoard6Button = new Button("Horns");
+		SoundBoard6Button.setOnAction(e -> startSoundBoard6(window));
 		SoundBoard6Button.getStyleClass().add("SoundBoardButtons");
 		
-		Button SoundBoard7Button = new Button("Go to Sound Board 7");
+		Button SoundBoard7Button = new Button("Sound Board 7");
 		SoundBoard7Button.setOnAction(e -> startSoundBoard1(window));
 		SoundBoard7Button.getStyleClass().add("SoundBoardButtons");
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -100,7 +102,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -115,7 +117,7 @@ public class GUI extends Application {
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -144,7 +146,8 @@ public class GUI extends Application {
 		primaryStage.show();
 		mainScene.getStylesheets().add("styles.css");
 		primaryStage.getIcons().add(new Image("logo.png"));
-	
+		primaryStage.setResizable(false);
+		
 	}
 
 	private void closeProgram() {
@@ -178,7 +181,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -186,7 +189,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -199,7 +202,7 @@ public class GUI extends Application {
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -213,28 +216,35 @@ public class GUI extends Application {
 		
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(4)));
 		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
+		
 		Button sound1 = new Button();
-		sound1.setText("Hi 1");
+		sound1.setText("Hi (Female)");
 		sound1.setOnAction(e -> SoundTest.randomSound(0));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Hi 2");
+		sound2.setText("Hey Sweetness");
 		sound2.setOnAction(e -> SoundTest.randomSound(1));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Hi 3");
+		sound3.setText("Hello (Male)");
 		sound3.setOnAction(e -> SoundTest.randomSound(2));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Hi 4");
+		sound4.setText("Hi Cutiepie");
 		sound4.setOnAction(e -> SoundTest.randomSound(3));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Hi 5");
+		sound5.setText("Hello Echo");
 		sound5.setOnAction(e -> SoundTest.randomSound(4));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
@@ -251,8 +261,9 @@ public class GUI extends Application {
 		
 		
 		// Adding all Children to the Scene.
-		soundBoard1Layout.getChildren().addAll(sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard1Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
 		soundBoard1Scene.getStylesheets().add("styles.css");
+		soundBoard1Stage.setResizable(false);
 	}
 	
 	private void startSoundBoard2(Stage soundBoard2Stage) {
@@ -279,7 +290,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -287,7 +298,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -301,7 +312,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -316,6 +327,13 @@ public class GUI extends Application {
 		});
 		
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(randomNum)));
+		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Scary Sound 1");
@@ -355,8 +373,9 @@ public class GUI extends Application {
 		
 		
 		// Adding all Children to the Scene.
-		soundBoard2Layout.getChildren().addAll(sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard2Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
 		soundBoard2Scene.getStylesheets().add("styles.css");
+		soundBoard2Stage.setResizable(false);
 	}
 	
 	private void startSoundBoard3(Stage soundBoard3Stage) {
@@ -383,7 +402,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -391,7 +410,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -405,7 +424,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -419,28 +438,35 @@ public class GUI extends Application {
 		
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt((14 - 10) + 1) + 10));
 		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
+		
 		Button sound1 = new Button();
-		sound1.setText("Animal Sound 1");
+		sound1.setText("Alpacas Making Noise");
 		sound1.setOnAction(e -> SoundTest.randomSound(10));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Animal Sound 2");
+		sound2.setText("Cat Meowing");
 		sound2.setOnAction(e -> SoundTest.randomSound(11));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Animal Sound 3");
+		sound3.setText("Crows");
 		sound3.setOnAction(e -> SoundTest.randomSound(12));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Animal Sound 4");
+		sound4.setText("Hawk Screeching");
 		sound4.setOnAction(e -> SoundTest.randomSound(13));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Animal Sound 5");
+		sound5.setText("Rooster");
 		sound5.setOnAction(e -> SoundTest.randomSound(14));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
@@ -457,8 +483,9 @@ public class GUI extends Application {
 		
 		
 		// Adding all Children to the Scene.
-		soundBoard3Layout.getChildren().addAll(sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard3Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
 		soundBoard3Scene.getStylesheets().add("styles.css");
+		soundBoard3Stage.setResizable(false);
 	}
 	
 	private void startSoundBoard4(Stage soundBoard4Stage) {
@@ -485,7 +512,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -493,7 +520,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -507,7 +534,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -520,6 +547,13 @@ public class GUI extends Application {
 		});
 		
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt((19 - 15) + 1) + 15));
+		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Fart 1");
@@ -559,10 +593,10 @@ public class GUI extends Application {
 		
 		
 		// Adding all Children to the Scene.
-		soundBoard4Layout.getChildren().addAll(sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard4Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
 		soundBoard4Scene.getStylesheets().add("styles.css");
+		soundBoard4Stage.setResizable(false);
 	}
-	
 	
 	private void startSoundBoard5(Stage soundBoard5Stage) {
 		window = soundBoard5Stage;
@@ -588,7 +622,7 @@ public class GUI extends Application {
 		
 		
 		// Creating background for main splash text to clash with.
-		Rectangle mainSplashBackground = new Rectangle(700,95, Color.AQUA);
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
 		mainSplashBackground.toBack();
 		
 		// Creating the main splash text.
@@ -596,7 +630,7 @@ public class GUI extends Application {
 		
 		mainSplash.setCache(true);
 		mainSplash.setText("SeaSlugs SoundBoard");
-		mainSplash.setFill(Color.BLUE);
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
 		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
 		
 		Reflection r = new Reflection();
@@ -610,7 +644,7 @@ public class GUI extends Application {
 		
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
-		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #547AE0");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
 		
 		Random randomSound = new Random();
 		
@@ -623,6 +657,13 @@ public class GUI extends Application {
 		});
 		
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt((24 - 20) + 1) + 20));
+		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Blastwave 1");
@@ -662,8 +703,120 @@ public class GUI extends Application {
 		
 		
 		// Adding all Children to the Scene.
-		soundBoard5Layout.getChildren().addAll(sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard5Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
 		soundBoard5Scene.getStylesheets().add("styles.css");
+		soundBoard5Stage.setResizable(false);
+	}
+	
+	
+	private void startSoundBoard6(Stage soundBoard6Stage) {
+		window = soundBoard6Stage;
+		window.setTitle("SeaSlugs Sound Board");
+		
+		// Setting layout for SoundBoard1 and creating new scene
+		Pane soundBoard6Layout = new Pane();
+		soundBoard6Layout.setPadding(new Insets(10, 10, 10, 10));
+		Scene soundBoard6Scene = new Scene(soundBoard6Layout, 700, 400);
+		soundBoard6Layout.setStyle("-fx-background-color: #FFF;");
+		
+		soundBoard6Stage.setScene(soundBoard6Scene);
+		soundBoard6Stage.show();
+		
+		// Adding Seaslugs logo
+		final Image logo = new Image("logo.png", 100, 100, true, true);
+		ImageView logoView = new ImageView(logo);
+		
+		// Adding Back Button
+		Button backButton = new Button();
+		backButton.setText("BACK");
+		backButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		
+		
+		// Creating background for main splash text to clash with.
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
+		mainSplashBackground.toBack();
+		
+		// Creating the main splash text.
+		Text mainSplash = new Text();
+		
+		mainSplash.setCache(true);
+		mainSplash.setText("SeaSlugs SoundBoard");
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
+		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
+		
+		Reflection r = new Reflection();
+		r.setFraction(0.7f);
+		 
+		mainSplash.setEffect(r);
+		 
+		mainSplash.setTranslateY(400);
+		
+		// Create Button Elements for Main Scene
+		
+		randomSoundButton = new Button();
+		randomSoundButton.setText("?");
+		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
+		
+		Random randomSound = new Random();
+		
+		backButton.setOnAction(e -> {
+			try {
+				start(window);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt((30 - 26) + 1) + 26));
+		
+		Button stopButton = new Button();
+		stopButton.setText("STOP");
+		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		// Call stop method from SoundTest to stop current sound.
+		stopButton.setOnAction(e -> SoundTest.stopSound());
+		stopButton.relocate(320, 350);
+		
+		Button sound1 = new Button();
+		sound1.setText("Horn 1");
+		sound1.setOnAction(e -> SoundTest.randomSound(26));
+		sound1.getStyleClass().add("SoundBoardButtons");
+		
+		Button sound2 = new Button();
+		sound2.setText("Horn 2");
+		sound2.setOnAction(e -> SoundTest.randomSound(27));
+		sound2.getStyleClass().add("SoundBoardButtons");
+		
+		Button sound3 = new Button();
+		sound3.setText("Horn 3");
+		sound3.setOnAction(e -> SoundTest.randomSound(28));
+		sound3.getStyleClass().add("SoundBoardButtons");
+		
+		Button sound4 = new Button();
+		sound4.setText("Horn 4");
+		sound4.setOnAction(e -> SoundTest.randomSound(29));
+		sound4.getStyleClass().add("SoundBoardButtons");
+		
+		Button sound5 = new Button();
+		sound5.setText("Horn 5");
+		sound5.setOnAction(e -> SoundTest.randomSound(30));
+		sound5.getStyleClass().add("SoundBoardButtons");
+		
+		sound1.relocate(200, 150);
+		sound2.relocate(400, 150);
+		sound3.relocate(100, 250);
+		sound4.relocate(300, 250);
+		sound5.relocate(500, 250);
+		backButton.relocate(600, 350);
+		randomSoundButton.relocate(10, 350);
+		mainSplash.relocate(200, -410);
+		mainSplashBackground.relocate(0, 0);
+		logoView.relocate(50, -10);
+		
+		
+		// Adding all Children to the Scene.
+		soundBoard6Layout.getChildren().addAll(stopButton, sound1, sound2, sound3, sound4, sound5, randomSoundButton, mainSplashBackground, mainSplash, backButton, logoView);
+		soundBoard6Scene.getStylesheets().add("styles.css");
+		soundBoard6Stage.setResizable(false);
 	}
 	
 }
