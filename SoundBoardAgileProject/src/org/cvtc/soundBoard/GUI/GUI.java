@@ -249,9 +249,9 @@ public class GUI extends Application {
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
 		sound1.relocate(200, 150);
-		sound2.relocate(400, 150);
+		sound2.relocate(300, 250);
 		sound3.relocate(100, 250);
-		sound4.relocate(300, 250);
+		sound4.relocate(400, 150);
 		sound5.relocate(500, 250);
 		backButton.relocate(600, 350);
 		randomSoundButton.relocate(10, 350);
@@ -333,7 +333,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Scary Sound 1");
@@ -470,11 +470,11 @@ public class GUI extends Application {
 		sound5.setOnAction(e -> SoundTest.randomSound(14));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
-		sound1.relocate(200, 150);
-		sound2.relocate(400, 150);
-		sound3.relocate(100, 250);
-		sound4.relocate(300, 250);
-		sound5.relocate(500, 250);
+		sound1.relocate(300, 250);
+		sound2.relocate(500, 250);
+		sound3.relocate(400, 150);
+		sound4.relocate(100, 250);
+		sound5.relocate(200, 150);
 		backButton.relocate(600, 350);
 		randomSoundButton.relocate(10, 350);
 		mainSplash.relocate(200, -410);
