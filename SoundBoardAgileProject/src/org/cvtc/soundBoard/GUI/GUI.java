@@ -336,27 +336,27 @@ public class GUI extends Application {
 		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
-		sound1.setText("Scary Sound 1");
+		sound1.setText("Spooky Music");
 		sound1.setOnAction(e -> SoundTest.randomSound(5));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Scary Sound 2");
+		sound2.setText("Scary Laugh");
 		sound2.setOnAction(e -> SoundTest.randomSound(6));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Scary Sound 3");
+		sound3.setText("Electricity");
 		sound3.setOnAction(e -> SoundTest.randomSound(7));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Scary Sound 4");
+		sound4.setText("Scary Roar");
 		sound4.setOnAction(e -> SoundTest.randomSound(8));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Scary Sound 5");
+		sound5.setText("Monster Chat");
 		sound5.setOnAction(e -> SoundTest.randomSound(9));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
@@ -556,27 +556,27 @@ public class GUI extends Application {
 		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
-		sound1.setText("Fart 1");
+		sound1.setText("Dry Fart");
 		sound1.setOnAction(e -> SoundTest.randomSound(15));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Fart 2");
+		sound2.setText("Quick Fart");
 		sound2.setOnAction(e -> SoundTest.randomSound(16));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Fart 3");
+		sound3.setText("Squeeky Fart");
 		sound3.setOnAction(e -> SoundTest.randomSound(17));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Fart 4");
+		sound4.setText("Wet Fart");
 		sound4.setOnAction(e -> SoundTest.randomSound(18));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Fart 5");
+		sound5.setText("Duck Fart");
 		sound5.setOnAction(e -> SoundTest.randomSound(19));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
@@ -666,27 +666,27 @@ public class GUI extends Application {
 		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
-		sound1.setText("Blastwave 1");
+		sound1.setText("Gas Explosion");
 		sound1.setOnAction(e -> SoundTest.randomSound(20));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Blastwave 2");
+		sound2.setText("Car Explosion");
 		sound2.setOnAction(e -> SoundTest.randomSound(21));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Blastwave 3");
+		sound3.setText("Explosion w/ Debris");
 		sound3.setOnAction(e -> SoundTest.randomSound(22));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Blastwave 4");
+		sound4.setText("Explosion w/ Metal");
 		sound4.setOnAction(e -> SoundTest.randomSound(23));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Blastwave 5");
+		sound5.setText("Quick Explosion");
 		sound5.setOnAction(e -> SoundTest.randomSound(24));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
@@ -777,27 +777,27 @@ public class GUI extends Application {
 		stopButton.relocate(320, 350);
 		
 		Button sound1 = new Button();
-		sound1.setText("Horn 1");
+		sound1.setText("Sports Horn");
 		sound1.setOnAction(e -> SoundTest.randomSound(26));
 		sound1.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound2 = new Button();
-		sound2.setText("Horn 2");
+		sound2.setText("Car Horn");
 		sound2.setOnAction(e -> SoundTest.randomSound(27));
 		sound2.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound3 = new Button();
-		sound3.setText("Horn 3");
+		sound3.setText("High Horn");
 		sound3.setOnAction(e -> SoundTest.randomSound(28));
 		sound3.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound4 = new Button();
-		sound4.setText("Horn 4");
+		sound4.setText("Air Horn");
 		sound4.setOnAction(e -> SoundTest.randomSound(29));
 		sound4.getStyleClass().add("SoundBoardButtons");
 		
 		Button sound5 = new Button();
-		sound5.setText("Horn 5");
+		sound5.setText("Boat Horn");
 		sound5.setOnAction(e -> SoundTest.randomSound(30));
 		sound5.getStyleClass().add("SoundBoardButtons");
 		
