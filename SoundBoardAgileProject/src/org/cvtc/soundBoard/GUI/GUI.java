@@ -44,11 +44,34 @@ public class GUI extends Application {
 		// Adding Seaslugs logo
 		final Image logo = new Image("logo.png", 100, 100, true, true);
 		ImageView logoView = new ImageView(logo);
-	
+		
+		// Adding soundboard icons
+		final Image greetingLogo = new Image("greeting.png", 100, 100, true, true);
+		ImageView greetingView = new ImageView(greetingLogo);
+				
+		final Image scaryLogo = new Image("skull.png", 100, 100, true, true);
+		ImageView scaryView = new ImageView(scaryLogo);
+			
+		final Image animalLogo = new Image("alpaca.png", 100, 100, true, true);
+		ImageView alapacaView = new ImageView(animalLogo);
+				
+		final Image dogLogo = new Image("doge.png", 120, 120, true, true);
+		ImageView dogView = new ImageView(dogLogo);
+				
+		final Image hornLogo = new Image("horn.png", 100, 100, true, true);
+		ImageView hornView = new ImageView(hornLogo);
+				
+		final Image blastwaveLogo = new Image("explosion.png", 100, 100, true, true);
+		ImageView blastwaveView = new ImageView(blastwaveLogo);
+				
+		final Image fartLogo = new Image("fart.png", 90, 90, true, true);
+		ImageView fartView = new ImageView(fartLogo);
+		
 		window.setOnCloseRequest(e -> {
 			e.consume();
 			closeProgram();
 		});
+		
 		
 		// Setting layout for main scene
 		Pane layoutMain = new Pane();
@@ -64,34 +87,6 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		
-		Button SoundBoard1Button = new Button("Greetings");
-		SoundBoard1Button.setOnAction(e -> startSoundBoard1(window));
-		SoundBoard1Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard2Button = new Button("Scary Sounds");
-		SoundBoard2Button.setOnAction(e -> startSoundBoard2(window));
-		SoundBoard2Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard3Button = new Button("Animal Sounds");
-		SoundBoard3Button.setOnAction(e -> startSoundBoard3(window));
-		SoundBoard3Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard4Button = new Button("Farts");
-		SoundBoard4Button.setOnAction(e -> startSoundBoard4(window));
-		SoundBoard4Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard5Button = new Button("Blast Waves");
-		SoundBoard5Button.setOnAction(e -> startSoundBoard5(window));
-		SoundBoard5Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard6Button = new Button("Horns");
-		SoundBoard6Button.setOnAction(e -> startSoundBoard6(window));
-		SoundBoard6Button.getStyleClass().add("SoundBoardButtons");
-		
-		Button SoundBoard7Button = new Button("Dogs");
-		SoundBoard7Button.setOnAction(e -> startSoundBoard7(window));
-		SoundBoard7Button.getStyleClass().add("SoundBoardButtons");
 		
 		// Creating background for main splash text to clash with.
 		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
@@ -113,11 +108,23 @@ public class GUI extends Application {
 		mainSplash.setTranslateY(400);
 		
 		logoView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> SoundTest.randomSound(25));
+		greetingView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard1(window));
+		scaryView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard2(window));
+		alapacaView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard3(window));
+		dogView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard7(window));
+		hornView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard6(window));
+		blastwaveView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard5(window));
+		fartView.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> startSoundBoard4(window));
 		
 		// Create Button Elements for Main Scene
 		randomSoundButton = new Button();
 		randomSoundButton.setText("?");
 		randomSoundButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
+		
+		Button aboutUsButton = new Button();
+		aboutUsButton.setText("About Us");
+		aboutUsButton.setStyle("-fx-font: 22 arial; -fx-base: #619DC8");
+		aboutUsButton.setOnAction(e -> aboutUs(window));
 		
 		Random randomSound = new Random();
 		
@@ -125,19 +132,20 @@ public class GUI extends Application {
 		randomSoundButton.setOnAction(e -> SoundTest.randomSound(randomSound.nextInt(31)));
 		
 		// Position elements in the scene and add them to the scene.
-		layoutMain.getChildren().addAll(mainSplashBackground, logoView, stopButton ,closeButton, randomSoundButton, mainSplash, SoundBoard1Button, SoundBoard2Button, SoundBoard3Button, SoundBoard4Button, SoundBoard5Button, SoundBoard6Button, SoundBoard7Button);
-		closeButton.relocate(640, 350);
-		stopButton.relocate(320, 350);
-		randomSoundButton.relocate(10, 350);
+		layoutMain.getChildren().addAll(hornView, dogView, scaryView, fartView, blastwaveView, greetingView, alapacaView, mainSplashBackground, logoView, stopButton ,closeButton, aboutUsButton, randomSoundButton, mainSplash);
+		closeButton.relocate(650, 350);
+		stopButton.relocate(450, 350);
+		aboutUsButton.relocate(200, 350);
+		randomSoundButton.relocate(25, 350);
 		mainSplash.relocate(200, -410);
 		mainSplashBackground.relocate(0, 0);
-		SoundBoard1Button.relocate(100, 150);
-		SoundBoard2Button.relocate(280, 150);
-		SoundBoard3Button.relocate(460, 150);
-		SoundBoard4Button.relocate(540, 250);
-		SoundBoard5Button.relocate(370, 250);
-		SoundBoard6Button.relocate(200, 250);
-		SoundBoard7Button.relocate(30, 250);
+		greetingView.relocate(100, 120);
+		scaryView.relocate(280, 120);
+		alapacaView.relocate(460, 120);
+		dogView.relocate(540, 230);
+		hornView.relocate(370, 250);
+		blastwaveView.relocate(200, 235);
+		fartView.relocate(30, 250);
 		logoView.relocate(50, -10);
 		
 		// Main window layout
@@ -147,6 +155,168 @@ public class GUI extends Application {
 		mainScene.getStylesheets().add("styles.css");
 		primaryStage.getIcons().add(new Image("logo.png"));
 		primaryStage.setResizable(false);
+		
+	}
+
+	private void aboutUs(Stage aboutUsStage) {
+		window = aboutUsStage;
+		window.setTitle("SeaSlugs Sound Board - About Us");
+		
+		// Setting layout for SoundBoard1 and creating new scene
+		Pane aboutUsLayout = new Pane();
+		aboutUsLayout.setPadding(new Insets(10, 10, 10, 10));
+		Scene aboutUsScene = new Scene(aboutUsLayout, 700, 1000);
+		aboutUsLayout.setStyle("-fx-background-color: #FFF;");
+		
+		aboutUsStage.setScene(aboutUsScene);
+		aboutUsStage.show();
+		
+		// Adding Seaslugs logo
+		final Image logo = new Image("logo.png", 100, 100, true, true);
+		ImageView logoView = new ImageView(logo);
+		
+		// Adding Back Button
+		Button backButton = new Button();
+		backButton.setText("BACK");
+		backButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
+		
+		
+		// Creating background for main splash text to clash with.
+		Rectangle mainSplashBackground = new Rectangle(700,95, Color.rgb(39, 100, 160, .99));
+		mainSplashBackground.toBack();
+		
+		// Creating the main splash text.
+		Text mainSplash = new Text();
+		
+		mainSplash.setCache(true);
+		mainSplash.setText("SeaSlugs SoundBoard");
+		mainSplash.setFill(Color.rgb(161,210,242,.99));
+		mainSplash.setFont(Font.font(null, FontWeight.BOLD, 44));
+		
+		Reflection r = new Reflection();
+		r.setFraction(0.7f);
+		 
+		mainSplash.setEffect(r);
+		 
+		mainSplash.setTranslateY(400);
+		
+		// Creating About us Text / Images
+		Text dieter = new Text();
+		dieter.setText("Dieter Frank: In college for an IT degree with a \n" + 
+		"double major in Software Development \n" +
+		" and Mobile Development. Hobbies include \n" +
+		"video games and Dungeons & Dragons Youtube \n" +
+		"channel 'Downstairs N' Dragons'.  I \n" +
+		"also collect funny hats and hourglasses.");
+		dieter.setFill(Color.rgb(0,0,0));
+		dieter.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image dieterLogo = new Image("dieter.jpg", 120, 120, true, true);
+		ImageView dieterView = new ImageView(dieterLogo);
+		
+		Text connor = new Text();
+		connor.setText("Connor Gharrity: Pending my final grade \n" +
+		"in this class, there is only one \n" +  
+		"class between me and graduation. I spend way \n" + 
+		"too much time and probably money feeding my \n" +
+		"gaming habits. Went to Blizzcon once, spent too \n" +
+		"much, that was neat.");
+		connor.setFill(Color.rgb(0,0,0));
+		connor.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image connorLogo = new Image("connor.jpg", 120, 120, true, true);
+		ImageView connorView = new ImageView(connorLogo);
+		
+		Text nick = new Text();
+		nick.setText("Nicholas LaBelle: In pursuit of a IT associates \n" +
+		"degree for Mobile and for Software Development. \n" +  
+		"Hobbies include video games and Linux meddling. \n" + 
+		"too much time and probably money feeding my \n" +
+		"I also built my own PC and like the sound of \n" +
+		"buckling springs.");
+		nick.setFill(Color.rgb(0,0,0));
+		nick.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image nickLogo = new Image("nick.png", 120, 120, true, true);
+		ImageView nickView = new ImageView(nickLogo);
+		
+		Text kyle = new Text();
+		kyle.setText("Kyle Piper: Kyle is in his final semester in \n" +
+		"the IT - Software Developmen Program. He \n" +  
+		"works tech support for an online software \n" + 
+		"developer and is hoping to get a developer \n" +
+		"position there after he finishes his degree. \n" +
+		"In his spare time, he likes to play guitar, \n" +
+		"read comics, and play video games.");
+		kyle.setFill(Color.rgb(0,0,0));
+		kyle.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image kyleLogo = new Image("kyle.jpg", 170, 170, true, true);
+		ImageView kyleView = new ImageView(kyleLogo);
+		
+		Text tyler = new Text();
+		tyler.setText("Tyler Herrmann: Fourth Semester software development \n" +
+		"student at Chippewa Valley Technical College, starting \n" +  
+		"in the Computer Science program at the University \n" + 
+		"of Eau Claire starting in the Fall of 2017. Originally \n" +
+		"from Philadelphia, PA a die hard fan of the Philadelphia  \n" +
+		"Flyers and a lover of anything technology related.");
+		tyler.setFill(Color.rgb(0,0,0));
+		tyler.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image tylerLogo = new Image("tyler.jpg", 110, 110, true, true);
+		ImageView tylerView = new ImageView(tylerLogo);
+		
+		Text tristin = new Text();
+		tristin.setText("Tristin Nelson: I am going for Associate degrees \n" +
+		"in both the IT Software and IT Mobile Develper \n" +  
+		"programs. For hobbies I like playing most \n" + 
+		"video games and playing DnD. I like making \n" +
+		"jokes and finding new memes.");
+		tristin.setFill(Color.rgb(0,0,0));
+		tristin.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		final Image tristinLogo = new Image("tristin.jpg", 110, 110, true, true);
+		ImageView tristinView = new ImageView(tristinLogo);
+		
+		Text josh = new Text();
+		josh.setText("Josh Prueher: Currently in final semester seeking a \n" +
+		"software development degree. Hobbies include watching \n" +  
+		"sports, playing video games with my kids, \n" + 
+		"and trying any new beers I can find.");
+		josh.setFill(Color.rgb(0,0,0));
+		josh.setFont(Font.font(null, FontWeight.BOLD, 12));
+		
+		backButton.setOnAction(e -> {
+			try {
+				start(window);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+		connor.relocate(375, 250);
+		connorView.relocate(440, 120);
+		dieter.relocate(30, 250);
+		dieterView.relocate(130, 120);
+		nick.relocate(30, 500);
+		nickView.relocate(130, 370);
+		kyle.relocate(375, 490);
+		kyleView.relocate(400, 370);
+		tyler.relocate(30, 750);
+		tylerView.relocate(130, 630);
+		tristin.relocate(375, 750);
+		tristinView.relocate(440, 635);
+		josh.relocate(30, 880);
+		backButton.relocate(600, 950);
+		mainSplash.relocate(200, -410);
+		mainSplashBackground.relocate(0, 0);
+		logoView.relocate(50, -10);
+		
+		// Adding all Children to the Scene.
+		aboutUsLayout.getChildren().addAll(josh, tristin, tristinView, tyler, tylerView, kyle, kyleView, nick, nickView, connor, connorView, dieterView, dieter, mainSplashBackground, mainSplash, backButton, logoView);
+		aboutUsScene.getStylesheets().add("styles.css");
+		aboutUsStage.setResizable(false);
 		
 	}
 
@@ -221,7 +391,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Hi (Female)");
@@ -443,7 +613,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Alpacas Making Noise");
@@ -553,7 +723,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Dry Fart");
@@ -663,7 +833,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Gas Explosion");
@@ -774,7 +944,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Sports Horn");
@@ -884,7 +1054,7 @@ public class GUI extends Application {
 		stopButton.setStyle("-fx-font: 22 arial; -fx-base: #ff0000");
 		// Call stop method from SoundTest to stop current sound.
 		stopButton.setOnAction(e -> SoundTest.stopSound());
-		stopButton.relocate(320, 350);
+		stopButton.relocate(300, 350);
 		
 		Button sound1 = new Button();
 		sound1.setText("Angry");
